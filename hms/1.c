@@ -64,13 +64,18 @@ void view_patients() {
         printf("No patients to display.\n");
         return;
     }
-    printf("%-30s %-30s %-15s %-50s %-5s %-30s %-5s\n", "Patient Name", "Guardian Name", "Phone Number", "Home Address", "Room", "Doctor", "Unique Number");
+    printf("Patient Information\n");
+    printf("%-20s %-20s\n", "Name", "Guardian Name");
+    printf("%-20s %-20s\n", "Phone Number", "Home Address");
+    printf("%-20s %-20s\n", "Room Number", "Doctor Name");
+    printf("%-20s %-20s\n", "Unique Number", "");
+    printf("-----------------------------------------------------------------------\n");
     for (int i = 0; i < patient_count; i++) {
         Patient patient = patients[i];
-        printf("%-30s %-30s\n", patient.name, patient.guardian);
-        printf("%-15s %-50s\n", patient.phone, patient.address);
-        printf("%-5d %-30s %-5d\n", patient.room_number, patient.doctor, patient.unique_number);
-        printf("\n");
+        printf("%-20s %-20s\n", patient.name, patient.guardian);
+        printf("%-20s %-20s\n", patient.phone, patient.address);
+        printf("%-20d %-20s\n", patient.room_number, patient.doctor);
+        printf("%-20d %-20s\n", patient.unique_number, "");
     }
 }
 
